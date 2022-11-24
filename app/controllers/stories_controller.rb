@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
     before_action :authenticate_user!
-    before_action :find_story, only: [:edit, :update, :show, :destory]
+    before_action :find_story, only: [:edit, :update, :show, :destroy]
 
 
     def index
@@ -37,7 +37,11 @@ class StoriesController < ApplicationController
         end
     end
     
-    
+    def destroy
+        @story.destroy
+        redirect_to stories_path, notice: '故事已刪除'
+    end
+
     
     
     private
