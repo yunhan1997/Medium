@@ -34,6 +34,10 @@ gem 'aasm', '~> 5.4'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
+gem 'friendly_id', '~> 5.5'
+
+
+gem 'babosa', '~> 2.0'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
