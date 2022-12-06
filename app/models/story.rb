@@ -12,6 +12,7 @@ class Story < ApplicationRecord
 
   default_scope { where(deleted_at: nil)}
   # scope :published_stories, -> { where(status: 'published') }
+  scope :published_stories, -> { published.with_attached_cover_image.order(created_at: :desc).includes(:user) }
 
 
 
