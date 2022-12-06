@@ -1,4 +1,7 @@
 class Story < ApplicationRecord
+
+  acts_as_paranoid
+
   extend FriendlyId
   friendly_id :slug_candidate, use: :slugged
 
@@ -10,15 +13,15 @@ class Story < ApplicationRecord
 
 
 
-  default_scope { where(deleted_at: nil)}
+  # default_scope { where(deleted_at: nil)}
   # scope :published_stories, -> { where(status: 'published') }
   scope :published_stories, -> { published.with_attached_cover_image.order(created_at: :desc).includes(:user) }
 
 
 
-  def destroy
-    update(deleted_at: Time.now)
-  end
+  # def destroy
+  #   update(deleted_at: Time.now)
+  # end
 
   aasm(column: 'status', no_direct_assignment: true) do 
     state :draft, initial: true
