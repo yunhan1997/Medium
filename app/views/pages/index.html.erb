@@ -79,14 +79,14 @@
         <%= @stories.each do |story|  %>
             <article class="media">
                 <div class="media-content">
-                <h2 class="title is-4"><%= link_to story.title, story_page_path(story.user.username,story), class: 'have-text-grey-dark' %></h2>
-                <p class="content"><%= story.content  %></p>
-                <footer>
-                    <p><%= link_to story.user.username, user_page_path(story.user.username), class: 'has-text-grey-darker' %> | <%= time_ago_in_words(story.updated_at) %></p>
-                </footer>
+                  <h2 class="title is-4"><%= link_to story.title, story_page_path(story.user.username,story), class: 'have-text-grey-dark' %></h2>
+                  <p class="content"><%= story.content  %></p>
+                  <footer>
+                      <p><%= link_to story.user.username, user_page_path(story.user.username), class: 'has-text-grey-dark' %> | <%= time_ago_in_words(story.updated_at) %></p>
+                  </footer>
                 </div>
                 <figure class="media-right">
-                <img src="https://fakeimg.pl/150x150/">
+                  <img src="https://fakeimg.pl/150x150/">
                 </figure>
             </article>
         <% end %>

@@ -6,6 +6,8 @@ class Story < ApplicationRecord
   belongs_to :user
   validates :title, presence: true
 
+  has_one_attached :cover_image
+
   default_scope { where(deleted_at: nil)}
 
   def destroy
