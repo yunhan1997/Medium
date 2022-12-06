@@ -8,7 +8,12 @@ class Story < ApplicationRecord
 
   has_one_attached :cover_image
 
+
+
   default_scope { where(deleted_at: nil)}
+  # scope :published_stories, -> { where(status: 'published') }
+
+
 
   def destroy
     update(deleted_at: Time.now)
