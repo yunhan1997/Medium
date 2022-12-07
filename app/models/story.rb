@@ -11,6 +11,7 @@ class Story < ApplicationRecord
 
   has_one_attached :cover_image
 
+  has_many :comments
 
 
   # default_scope { where(deleted_at: nil)}
