@@ -9,6 +9,7 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
+    "froala-editor": "^4.0.16",
     "webpack-dev-server": "^3"
   }
 }
